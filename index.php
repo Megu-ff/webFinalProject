@@ -51,16 +51,16 @@
 	?>
 	<div id="container">
 		<div id="mySidenav" class="sidenav">
-			<button class="closebtn" onclick="navBar()">&times;</button>
-			<button onclick=fadeClick('#newsletterContainer') class='planetButton'>Newsletter</button>
-			<button onclick=fadeClick('#mercuryContainer') class='planetButton'>Mercury</button>
-			<button onclick=fadeClick('#venusContainer') class='planetButton'>Venus</button>
-			<button onclick=fadeClick('#earthContainer') class='planetButton'>Earth</button>
-			<button onclick=fadeClick('#marsContainer') class='planetButton'>Mars</button>
-			<button onclick=fadeClick('#jupiterContainer') class='planetButton'>Jupiter</button>
-			<button onclick=fadeClick('#saturnContainer') class='planetButton'>Saturn</button>
-			<button onclick=fadeClick('#uranusContainer') class='planetButton'>Uranus</button>
-			<button onclick=fadeClick('#neptuneContainer') class='planetButton'>Neptune</button>
+			<button class="closebtn" onclick="navBar(); stop();">&times;</button>
+			<button onclick="fadeClick('#newsletterContainer'); stop();" class='planetButton'>Newsletter</button>
+			<button onclick="fadeClick('#mercuryContainer'); stop();" class='planetButton'>Mercury</button>
+			<button onclick="fadeClick('#venusContainer'); stop();" class='planetButton'>Venus</button>
+			<button onclick="fadeClick('#earthContainer'); stop();" class='planetButton'>Earth</button>
+			<button onclick="fadeClick('#marsContainer'); stop();" class='planetButton'>Mars</button>
+			<button onclick="fadeClick('#jupiterContainer'); stop();" class='planetButton'>Jupiter</button>
+			<button onclick="fadeClick('#saturnContainer'); stop();" class='planetButton'>Saturn</button>
+			<button onclick="fadeClick('#uranusContainer'); stop();" class='planetButton'>Uranus</button>
+			<button onclick="fadeClick('#neptuneContainer'); stop();" class='planetButton'>Neptune</button>
 			
 		</div>
 
@@ -117,7 +117,7 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<video width="100%" height="100%" controls>
+					<video id="video" width="100%" height="100%" controls>
 						<source src="vid/mercury.mp4" type="video/mp4">
 
 					</div>
@@ -174,7 +174,7 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<video width="100%" height="100%" controls>
+					<video id="video" width="100%" height="100%" controls>
 						<source src="vid/venus.mp4" type="video/mp4">
 					</div>
 				</div>
@@ -223,7 +223,7 @@
 				
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<video width="100%" height="100%" controls>
+					<video id="video" width="100%" height="100%" controls>
 						<source src="vid/earth.mp4" type="video/mp4">
 					</div>
 				</div>
@@ -273,7 +273,7 @@
 				</div>  
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<video width="100%" height="100%" controls>
+					<video id="video" width="100%" height="100%" controls>
 						<source src="vid/mars.mp4" type="video/mp4">
 						
 					</div>
@@ -321,7 +321,7 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<video width="100%" height="100%" controls>
+					<video id="video" width="100%" height="100%" controls>
 						<source src="vid/jupiter.mp4" type="video/mp4">
 
 					</div>
@@ -370,7 +370,7 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<video width="100%" height="100%" controls>
+					<video id="video" width="100%" height="100%" controls>
 						<source src="vid/saturn.mp4" type="video/mp4">
 
 					</div>
@@ -420,7 +420,7 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<video width="100%" height="100%" controls>
+					<video id="video" width="100%" height="100%" controls>
 						<source src="vid/uranus.mp4" type="video/mp4">
 						
 					</div>
@@ -468,7 +468,7 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<video width="100%" height="100%" controls>
+					<video id="video" width="100%" height="100%" controls>
 						<source src="vid/neptune.mp4" type="video/mp4">
 					</div>
 				</div>
