@@ -5,7 +5,6 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<script src="js/javascript.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<title>Space Exploration Site</title>
 </head>
 
@@ -49,37 +48,6 @@
 			}
 		}
 	}
-	
-	if(isset($_SERVER['HTTP_REFERER'])){
-    header("Location: " . $_SERVER['HTTP_REFERER']);    
-} else {
-    echo "An Error";
-}
-
-//get details from form
-$name = $_POST["uName"];
-$email = $_POST["uEmail"];
-
-
-//check for file
-if (file_exists('email.xml')) {
-    //loads the xml and returns a simplexml object 
-    $xml = simplexml_load_file('email.xml');
-    $newChild = $xml->addChild('newsletter');
-    $newChild->addChild('uName', $name);
-    $newChild->addChild('uEmail', $email);
-
-    //transforming the object in xml format
-    $output = $xml->asXML();
-    
-} else {
-    exit('Failed to open email.xml.');
-}
-//save changes to xml file
- file_put_contents('email.xml', $xml->asXML());
-	
-	
-	
 	?>
 	<div id="container">
 		<div id="mySidenav" class="sidenav">
@@ -510,7 +478,7 @@ if (file_exists('email.xml')) {
 		<div id="newsletterContainer" class = 'fade planet'>
 			<div id='newsletterForm'>
 				<h1>Sign up for our free newsletter here for literally no reason at all.</h1>
-				  <form action="index.php" method="post">
+				<form name='signup' method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 					<p>
 						Name <br/>
 						<input type='text' name="uName" class='formInput' value="<?php echo $name;?>" required/><br/>
@@ -520,27 +488,9 @@ if (file_exists('email.xml')) {
 						<p><span class="error"><?php echo $emailErr;?></span></p><br/>
 						<span id='captchafordummies'>To protect ourselves from spam bots, please answer this simple question to complete your sign up.<br/>
 						From which planet do humans come from?</span><br/>
-						
 						<input type='text' id="captchaInput" name="security" class='formInput'" required/><br/>
 						<p><span class="error"><?php echo $securityErr;?></span></p><br/>
-						<button type="button">Submit</button>
-<p></p>
-			<script type="text/javascript">
-					$(document).ready(function(){
-						$("button").click(function(){
-
-							$.ajax({
-							type: 'POST',
-							url: 'xml.php',
-							success: function(data) {
-								alert(data);
-							$("p").text(data);
-			
-                }
-            });
-   });
-});
-</script>
+						<input type='submit' class='formInput' onclick=validation()/><br/>
 					</p>
 					</form>
 				</div>
