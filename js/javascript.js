@@ -22,6 +22,11 @@ function fadeClick(element) {
 }
 
 //Pausing video
+var video = document.getElementById("video");
 
+function stop() {
+    var video = document.getElementById("video");
+    video.load();
+}
 
 
