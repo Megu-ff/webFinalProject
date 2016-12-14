@@ -53,6 +53,7 @@
 		<div id="mySidenav" class="sidenav">
 			<button class="closebtn" onclick="navBar(); stop();">&times;</button>
 			<button onclick="fadeClick('#newsletterContainer'); stop();" class='planetButton'>Newsletter</button>
+<button onclick="fadeClick('#newsletterXml'); stop();" class='planetButton'>Newsletter XML</button>
 			<button onclick="fadeClick('#mercuryContainer'); stop();" class='planetButton'>Mercury</button>
 			<button onclick="fadeClick('#venusContainer'); stop();" class='planetButton'>Venus</button>
 			<button onclick="fadeClick('#earthContainer'); stop();" class='planetButton'>Earth</button>
@@ -490,11 +491,40 @@
 						<input type='text' id="captchaInput" name="security" class='formInput'" required/><br/>
 						<p><span class="error"><?php echo $securityErr;?></span></p><br/>
 						<input type='submit' class='formInput' onclick=validation()/><br/>
+
 					</p>
 					</form>
 				</div>
 			</div>
-			
+
+
+		<div id="newsletterContainer" class = 'fade planet'>
+			<div id='newsletterForm'>
+<form name='signup' method="post">
+<p>
+<?php
+
+// Load the XML source
+$xml = new DOMDocument;
+$xml->load('email.xml');
+$xsl = new DOMDocument;
+$xsl->substituteEntities = true; 
+$xsl->load('email.xsl');
+
+// Configure the transformer
+$proc = new XSLTProcessor;
+$proc->importStyleSheet($xsl); // attach the xsl rules
+
+echo $proc->transformToXML($xml);
+
+?>
+
+</p>
+</form>
+</div>
+</div
+
+
 			
 			
 		</div>
