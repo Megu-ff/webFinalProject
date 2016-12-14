@@ -51,16 +51,16 @@
 	?>
 	<div id="container">
 		<div id="mySidenav" class="sidenav">
-			<button class="closebtn" onclick="navBar()">&times;</button>
-			<button onclick=fadeClick('#newsletterContainer') class='planetButton'>Newsletter</button>
-			<button onclick=fadeClick('#mercuryContainer') class='planetButton'>Mercury</button>
-			<button onclick=fadeClick('#venusContainer') class='planetButton'>Venus</button>
-			<button onclick=fadeClick('#earthContainer') class='planetButton'>Earth</button>
-			<button onclick=fadeClick('#marsContainer') class='planetButton'>Mars</button>
-			<button onclick=fadeClick('#jupiterContainer') class='planetButton'>Jupiter</button>
-			<button onclick=fadeClick('#saturnContainer') class='planetButton'>Saturn</button>
-			<button onclick=fadeClick('#uranusContainer') class='planetButton'>Uranus</button>
-			<button onclick=fadeClick('#neptuneContainer') class='planetButton'>Neptune</button>
+			<button class="closebtn" onclick="navBar(); stop();">&times;</button>
+			<button onclick="fadeClick('#newsletterContainer'); stop();" class='planetButton'>Newsletter</button>
+			<button onclick="fadeClick('#mercuryContainer'); stop();" class='planetButton'>Mercury</button>
+			<button onclick="fadeClick('#venusContainer'); stop();" class='planetButton'>Venus</button>
+			<button onclick="fadeClick('#earthContainer'); stop();" class='planetButton'>Earth</button>
+			<button onclick="fadeClick('#marsContainer'); stop();" class='planetButton'>Mars</button>
+			<button onclick="fadeClick('#jupiterContainer'); stop();" class='planetButton'>Jupiter</button>
+			<button onclick="fadeClick('#saturnContainer'); stop();" class='planetButton'>Saturn</button>
+			<button onclick="fadeClick('#uranusContainer'); stop();" class='planetButton'>Uranus</button>
+			<button onclick="fadeClick('#neptuneContainer'); stop();" class='planetButton'>Neptune</button>
 			
 		</div>
 
@@ -77,7 +77,7 @@
 				<div class="Header">Welcome to Mercury</div>
 
 				<div class="Background">
-					<img src="img/Mercury.png" alt="Mercury Image" Width="120%" height="120%" >
+					<img src="img/Mercury.png" alt="Mercury Image" Width="75%" height="75%" >
 				</div>
 
 				<div class='TextOuterDiv'>
@@ -117,16 +117,8 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/bX4riPijwWc" frameborder="0" allowfullscreen></iframe>
-
-						<script>
-							var myVideo=document.getElementById("myVidMercury"); 
-							function pauseVid() {
-								if (myVideo.play) {
-									myVideo.pause(); 
-								}
-							}
-						</script>
+					<video id="video" width="100%" height="100%" controls>
+						<source src="vid/mercury.mp4" type="video/mp4">
 
 					</div>
 				</div>
@@ -139,7 +131,7 @@
 				<div class="Header">Welcome to Venus</div>
 
 				<div class="Background">
-					<img src="img/Venus.png" alt="Venus" Width="120%" height="120%">
+					<img src="img/Venus.png" alt="Venus" Width="75%" height="75%">
 				</div>
 
 				<div class='TextOuterDiv'>
@@ -182,7 +174,8 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/14gsV5fkhFU" frameborder="0" allowfullscreen></iframe>
+					<video id="video" width="100%" height="100%" controls>
+						<source src="vid/venus.mp4" type="video/mp4">
 					</div>
 				</div>
 
@@ -194,7 +187,7 @@
 				<div class="Header">Welcome to Earth</div>
 
 				<div class="Background">
-					<img src="img/Earth.png" alt="Venus" Width="120%" height="120%">
+					<img src="img/Earth.png" alt="Venus" Width="75%" height="75%">
 				</div>
 
 				<div class='TextOuterDiv'>
@@ -230,7 +223,8 @@
 				
 				<div class="VideoOuter">
 					<div class="VideoInner">
-					<iframe width="100%" height="100%" src="https://www.youtube.com/embed/z4wJnAR1yOk" frameborder="0" allowfullscreen></iframe>
+					<video id="video" width="100%" height="100%" controls>
+						<source src="vid/earth.mp4" type="video/mp4">
 					</div>
 				</div>
 
@@ -241,7 +235,7 @@
 				<div class="Header">Welcome to Mercury</div>
 
 				<div class="Background">
-					<img src="img/Mars.png" alt="Mars Image" Width="120%" height="120%">
+					<img src="img/Mars.png" alt="Mars Image" Width="75%" height="75%">
 				</div>
 
 				<div class='TextOuterDiv'>
@@ -279,7 +273,8 @@
 				</div>  
 				<div class="VideoOuter">
 					<div class="VideoInner">
-						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Prj5uxZOd2s" frameborder="0" allowfullscreen></iframe>
+					<video id="video" width="100%" height="100%" controls>
+						<source src="vid/mars.mp4" type="video/mp4">
 						
 					</div>
 				</div>
@@ -290,7 +285,7 @@
 				<div class="Header">Welcome to Jupiter</div>
 
 				<div class="Background">
-					<img src="img/Jupiter.png" alt="Jupiter Image" Width="120%" height="120%">
+					<img src="img/Jupiter.png" alt="Jupiter Image" Width="75%" height="75%">
 				</div>
 
 				<div class='TextOuterDiv'>
@@ -326,7 +321,8 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/BZnDB5VJiT8" frameborder="0" allowfullscreen></iframe>
+					<video id="video" width="100%" height="100%" controls>
+						<source src="vid/jupiter.mp4" type="video/mp4">
 
 					</div>
 				</div>
@@ -337,8 +333,8 @@
 
 				<div class="Header">Welcome to Saturn</div>
 
-				<div class="Background">
-					<img src="img/Saturn.png" alt="Saturn Image" Width="120%" height="120%">
+				<div class="Saturn">
+					<img src="img/Saturn.png" alt="Saturn Image" Width="75%" height="75%">
 				</div>
 
 				<div class='TextOuterDiv'>
@@ -374,7 +370,8 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/KDX1likfogQ" frameborder="0" allowfullscreen></iframe>
+					<video id="video" width="100%" height="100%" controls>
+						<source src="vid/saturn.mp4" type="video/mp4">
 
 					</div>
 				</div>
@@ -386,7 +383,7 @@
 				<div class="Header">Welcome to Uranus</div>
 
 				<div class="Background">
-					<img src="img/Uranus.png" alt="Uranus Image" Width="120%" height="120%">
+					<img src="img/Uranus.png" alt="Uranus Image" Width="75%" height="75%">
 				</div>
 
 				<div class='TextOuterDiv'>
@@ -423,7 +420,8 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/9pFs5PmIsLg" frameborder="0" allowfullscreen></iframe>
+					<video id="video" width="100%" height="100%" controls>
+						<source src="vid/uranus.mp4" type="video/mp4">
 						
 					</div>
 				</div>
@@ -434,7 +432,7 @@
 				<div class="Header">Welcome to Neptune</div>
 
 				<div class="Background">
-					<img src="img/Neptune.png" alt="Neptune Image" Width="120%" height="120%">
+					<img src="img/Neptune.png" alt="Neptune Image" Width="75%" height="75%">
 				</div>
 
 				<div class='TextOuterDiv'>
@@ -470,7 +468,8 @@
 
 				<div class="VideoOuter">
 					<div class="VideoInner">
-						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/7wm8Uinm5OM" frameborder="0" allowfullscreen></iframe>
+					<video id="video" width="100%" height="100%" controls>
+						<source src="vid/neptune.mp4" type="video/mp4">
 					</div>
 				</div>
 			</div>
@@ -495,6 +494,9 @@
 					</form>
 				</div>
 			</div>
+			
+			
+			
 		</div>
 		
 		

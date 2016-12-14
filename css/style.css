@@ -16,7 +16,13 @@ body {
 /*    Backgrounds for the Planets   */                                       
 .Background{
 	position:absolute;
-	right:45%;
+	left: 15%;
+	top:10%;
+}
+
+.Saturn{
+	position:absolute;
+	left: -4%;
 	top:10%;
 }
 
